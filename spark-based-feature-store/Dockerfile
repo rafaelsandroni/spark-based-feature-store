@@ -1,14 +1,14 @@
 FROM jupyter/all-spark-notebook
 
-WORKDIR /home/jovyan/work
+WORKDIR /usr/src/app
 
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
-COPY notebooks notebooks
-COPY src src
+COPY . .
 
 EXPOSE 8888
 EXPOSE 4040
 EXPOSE 4041
 
+CMD ["python", "src/pipeline.py"]

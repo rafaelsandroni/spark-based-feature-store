@@ -68,14 +68,11 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
     ports:
       - "9092:9092"
-  pyspark-jupyter:
-    container_name: pyspark-jupyter
-    build:
-      dockerfile: Dockerfile
-      context: ./spark-based-feature-store
-    image: pyspark-jupyter
+  pyspark-app:
+    container_name: pyspark-app
+    build: ./spark-based-feature-store
     volumes:
-      - pyspark-jupyter:/home/jovyan
+      - pyspark-app:/usr/src/app
     ports:
       - 8888:8888
       - 4040:4040
@@ -84,7 +81,7 @@ services:
 volumes:
   namenode:
   datanode:
-  pyspark-jupyter:
+  pyspark-app:
   cassandra:
   
   

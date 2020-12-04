@@ -49,6 +49,23 @@ def run():
     print("Running pipeline...")
     pipeline.run()
 
+
+def consuming():    
+    
+    print("="*100)
+    print("online feature store")
+    cluster = Cluster(['feature_store_cassandra'])
+    session = cluster.connect()
+    df = session.execute("SELECT * FROM feature_store.orders_feature_master_table")
+    cluster.shutdown()
+    # Create data frame
+    df = spark.createDataFrame(df)
+    print(df.show())
+    print("="*100)
+    print("historical feature store")
+    print(spark.table("historical_feature_store__orders_feature_master_table").show())
+
+
 if __name__ == "__main__":
 
     parser: ArgumentParser = ArgumentParser(

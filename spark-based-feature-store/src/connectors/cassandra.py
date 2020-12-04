@@ -34,9 +34,7 @@ def create_table(df, keyspace, table_name, primary_key):
 
     session.execute(f"CREATE KEYSPACE IF NOT EXISTS {keyspace} WITH REPLICATION = {{ 'class' : 'NetworkTopologyStrategy', 'datacenter1' : 1 }};")
 
-    sql = ", ".join(
-        [f"{feature.name} {cassandra_mapping[str(feature.dataType)]}" for feature in df.schema]
-    )
+    sql = ", ".join([feature.name +str(" ") + cassandra_mapping[str(feature.dataType)] for feature in df.schema])
 
     sql = sql.replace(f"{primary_key} text", f"{primary_key} text PRIMARY KEY")
     
