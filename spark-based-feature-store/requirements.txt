@@ -1,0 +1,4 @@
+butterfree[h3]==1.1.1
+kafka-python==2.0.2
+pyspark==3.0.1
+typing-extensions==3.7.4.3
