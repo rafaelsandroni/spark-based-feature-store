@@ -22,6 +22,13 @@ Docker-compose:
 
     docker-compose up
     
+    - spark-app will run the pipeline
+
+Execution:
+
+- When you run docker-compose, the spark-app container will run the pipeline and show, at the end, a query consuming data from online and offline features.
+- But you can open the notebooks (in ./notebooks), and do it yourself.
+
 Project structure (into spark-based-feature-store folder):
 
     notebooks 
