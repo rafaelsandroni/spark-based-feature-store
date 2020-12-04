@@ -1,4 +1,4 @@
-
+""" Cassandra connectors """
 from butterfree.configs.db import CassandraConfig
 from cassandra.cluster import Cluster
 

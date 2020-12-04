@@ -13,7 +13,8 @@ from butterfree.pipelines import FeatureSetPipeline
 spark_client = spark_connector()
 
 def run():
-    """ Build data sources, features transformations and loaders.    
+    """ 
+    Build data sources, features transformations and loaders.    
     By the end, run the entirely pipeline, and write data into loaders.
     """
     
@@ -51,6 +52,9 @@ def run():
 
 
 def consuming():    
+    """
+    Query example for consuming online and offline features.
+    """
     
     print("="*100)
     print("online feature store")

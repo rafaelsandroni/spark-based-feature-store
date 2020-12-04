@@ -3,6 +3,12 @@ from conf import constants
 from butterfree.extract.source import Source 
 
 def extractor() -> Source:
+    """
+    Read data from kafka sources, join data, and return a source object to be used in pipeline.
+    
+    Returns:
+        Source: Source object
+    """
 
     orders_reader = kafka_connector(
         event_id="order_events",

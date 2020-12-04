@@ -7,7 +7,15 @@ from butterfree.load.writers import (
 )
 
 def loader(features_set_df: pyspark.sql.DataFrame) -> Sink:
+    """Save data into data storages.
 
+    Args:
+        features_set_df (pyspark.sql.DataFrame): Dataframe with features transformations
+
+    Returns:
+        Sink: Sink object to be used in pipeline
+    """
+    
     db_config = get_config()
 
     keyspace = "feature_store"

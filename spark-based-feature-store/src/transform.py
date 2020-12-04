@@ -5,6 +5,11 @@ from butterfree.transform.features import Feature, KeyFeature, TimestampFeature
 from butterfree.constants import DataType
 
 def transformer():
+    """Apply transformation to features.
+
+    Returns:
+        Feature_set: FeatureSet object
+    """
 
 
     # primary key

@@ -1,3 +1,4 @@
+""" Spark connectors """
 from pyspark import SparkContext, SparkConf
 from pyspark.sql import session, SparkSession
 from pyspark.sql import HiveContext

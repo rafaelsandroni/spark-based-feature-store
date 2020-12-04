@@ -1,3 +1,4 @@
+""" kafka connectors """
 from conf import constants
 from butterfree.extract.readers import KafkaReader
 
