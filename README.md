@@ -1,5 +1,4 @@
 # Spark-based Feature Store
-## Offline (Historical) and Online (Realtime) Features
 
 - This project presents a feature store approach using Pyspark, within a simple, flexible and reliable structure.
 
